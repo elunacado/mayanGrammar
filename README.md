@@ -11,7 +11,9 @@ The language I chose for this hand-in was Mayan, but because of the complexity o
 | Tone'                 | táan            | k                   |                            |
 | Te'exe'               | táan            | a                   |                            |
 | Leti'obe'             | táan            | u                   |                            |
+
 and  Regular present which describe actions that occur regularly, such as eating or sleeping, and for this tense, the rules are the next ones:
+
 | Personal Pronoun      | Particle        | Mixed pronoun verbs | Verb                       |
 |-----------------------|-----------------|---------------------|----------------------------|
 | Tene'                 | k               | in                  |   Transitive               |
