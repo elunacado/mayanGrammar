@@ -23,3 +23,9 @@ and  Regular present which describe actions that occur regularly, such as eating
 | Te'exe'               | k               | a                   |                            |
 | Leti'obe'             | k               | u                   |                            |
 
+And for this hand-in i'll deliver a RCFG (Restricted Context Free Grammar) which as explained by (author & definition)
+I've prevented any ambiguity* in RCFG by ....
+And any left side recursion** by  ....
+
+*Ambiguity: 
+**Left Side Recursion:
