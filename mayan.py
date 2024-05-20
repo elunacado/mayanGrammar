@@ -15,10 +15,10 @@ mayanGrammar = CFG.fromstring("""
     
     V -> IV
     V -> TV                                
-    IV -> 'janal' | 'boon' | 'meyaj' | 'koonol' 
-    TV -> 'jaantik'|'bonik'|'meyatik'|'konik'                          
+    IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' 
+    TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
     
-    N -> 'já'|'janal'|'summ'|'tunich'|'kàax'|'python'
+    N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
     """)
 
 mayanParser = nltk.ChartParser(mayanGrammar)
@@ -64,12 +64,7 @@ def mayanTokenizer(sentence):
     return sentence.split()
 
 sentences = [
-            'Tene_ kin janal já',
-            'Tene_ táan in janal já',
-            'Tene_ táan in jaantik já'
-            #'Tene_ kin janal',
-            #'Teche_ ka janal',
-            #'Leti_e_ k janal',
+            'Tene_ kin ukic já',
 
             ]
 
