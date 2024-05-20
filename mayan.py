@@ -2,17 +2,23 @@ import nltk
 from nltk import CFG
 
 mayanGrammar = CFG.fromstring("""
-    PP -> AV | P
-    P -> MPV
-    AV -> MPV
-    MPV -> V
-    PP ->  'tene_'|'teche_'|'teti_e_'|'toone_'|'te_exe_'|'leti_obe_|Ltio_'
+    S -> PP DET
+    
+    DET -> AV MPV V N
+    DET -> P MPV V N
+    
+    AV -> 'táan'                                                    
     P -> 'k'
-    AV -> 'táan'
-    MPV -> 'in'|'a'|'u'|'k'
-    V -> TV|IV
-    TV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic'
-    IV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+                            
+    MPV -> 'in' | 'a' | 'u' | 'k'
+    PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+    
+    V -> IV
+    V -> TV                                
+    IV -> 'janal' | 'boon' | 'meyaj' | 'koonol' 
+    TV -> 'jaantik'|'bonik'|'meyatik'|'konik'                          
+    
+    N -> 'já'|'janal'|'summ'|'tunich'|'kàax'|'python'
     """)
 
 mayanParser = nltk.ChartParser(mayanGrammar)
@@ -20,20 +26,59 @@ mayanParser = nltk.ChartParser(mayanGrammar)
 def mayanTokenizer(sentence):
     sentence = sentence.lower()
     replacements = {
-        'Tene_kin': 'k in',
-        'Teche_ka': 'k a',
-        'Leti_e_ ku': 'k u',
-        'Te_exe_ka': 'Te_exe_ k a',
-        'Ltio_ki': 'k i',
+        #kin case
+        'tene_ kin': 'tene_ k in',
+        'teche_ kin': 'teche_ k in',
+        'leti_e_ kin': 'leti_e_ k in',
+        'tone_ kin': 'tone_ k in',
+        'te_exe_ kin': 'te_exe_ k in',
+        'leti_obe_ kin': 'leti_obe_ k in',
+
+        #ka case
+        'tene_ ka': 'tene_ k a',
+        'teche_ ka': 'teche_ k a',
+        'leti_e_ ka': 'leti_e_ k a',
+        'tone_ ka': 'tone_ k a',
+        'te_exe_ ka': 'te_exe_ k a',
+        'leti_obe_ ka': 'leti_obe_ k a',
+
+        #ku case
+        'tene_ ku': 'tene_ k u',
+        'teche_ ku': 'teche_ k u',
+        'leti_e_ ku': 'leti_e_ k u',
+        'tone_ ku': 'tone_ k u',
+        'te_exe_ ku': 'te_exe_ k u',
+        'leti_obe_ ku': 'leti_obe_ k u',
+
+        #k case
+        'tene_ kk': 'tene_ k k',
+        'teche_ kk': 'teche_ k k',
+        'leti_e_ kk': 'leti_e_ k k',
+        'tone_ kk': 'tone_ k k',
+        'te_exe_ kk': 'te_exe_ k k',
+        'leti_obe_ kk': 'leti_obe_ k k',
+        
     }
     for word, replacement in replacements.items():
         sentence = sentence.replace(word, replacement)
-    return sentence.split()  # split by space
+    return sentence.split()
 
-sentences = ['Tene_ kin', 'tene_ táan in miis', 'teche_ táan a miis', 'leti_e_ táan u miis', 'toone_ táan k miis', 'te_exe_ táan in miis', 'Leti_obe_ táan a miis']
+sentences = [
+            'Tene_ kin janal já',
+            'Tene_ táan in janal já',
+            'Tene_ táan in jaantik já'
+            #'Tene_ kin janal',
+            #'Teche_ ka janal',
+            #'Leti_e_ k janal',
+
+            ]
 
 for sentence in sentences:
     tokens = mayanTokenizer(sentence)
-    for tree in mayanParser.parse(tokens):
-        print(tree)
-        tree.pretty_print()
+    if not tokens:
+        print("Failed to tokenize sentence:", sentence)
+    else:
+        print("Loading trees...")
+        for tree in mayanParser.parse(tokens):
+            print("Parse tree:")
+            tree.pretty_print()
