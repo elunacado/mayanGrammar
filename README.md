@@ -30,7 +30,11 @@ Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which mean
 And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
 And some sentences that can be formed and are included as tests in my code are:
-* 
+* I drink water
+*  You eat food
+* He/She stretches the rope
+* We lift the stone regularly
+
 
 
 
