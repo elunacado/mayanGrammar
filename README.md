@@ -1,8 +1,8 @@
 # mayanGrammar
 This is my hand in for:  Evidence 2 Generating and Cleaning a Restricted Context Free Grammar 
 
-# Description 
-The language I chose for this hand-in was Mayan, but because of the complexity of this language, I'll be limiting it to the two types of present Mayas have  which are Actualk Present which describes an action that is taking place at the current moment the rules for this tense are as follows:
+# Language Structure 
+The language I chose for this hand-in was Mayan, but because of the complexity of this language, I'll be limiting it to the two types of present Mayas have which are Actual Present which describes an action that is taking place at the current moment the rules for this tense are as follows:
 | Personal Pronoun     | Auxiliary verbs   | Mixed pronoun verbs | Verb                       |
 |-----------------------|------------------|---------------------|----------------------------|
 | Tene'                 | táan             | in                  |   Transitive               |
@@ -23,9 +23,14 @@ and  Regular present which describe actions that occur regularly, such as eating
 | Te'exe'               | k               | a                   |                            |
 | Leti'obe'             | k               | u                   |                            |
 
-And for this hand-in i'll deliver a RCFG (Restricted Context Free Grammar) which as explained by (author & definition)
-I've prevented any ambiguity* in RCFG by ....
-And any left side recursion** by  ....
+So for this code i choosed the following verbs: <br />
+Transitive Verbs -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' which means 'to drink'|'to eat'|'to stretch'|'to lift'|'to kill'|'to learn'
 
-*Ambiguity: 
-**Left Side Recursion:
+Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+
+And for this hand-in i'll deliver a RCFG (Restricted Context Free Grammar) which as explained by (author & definition) <br />
+I've prevented any ambiguity* in RCFG by ....  <br />
+And any left side recursion** by  .... <br />
+
+*Ambiguity: <br />
+**Left Side Recursion: <br />
