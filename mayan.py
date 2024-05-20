@@ -65,7 +65,9 @@ def mayanTokenizer(sentence):
 
 sentences = [
             'Tene_ kin ukic já',
-
+            'Teche_ ka hantic janal',
+            'Leti_e_ ku haylic summ',
+            'Tone_ táan u cimzik tunich',
             ]
 
 for sentence in sentences:
@@ -73,6 +75,7 @@ for sentence in sentences:
     if not tokens:
         print("Failed to tokenize sentence:", sentence)
     else:
+        print("Tokens:", tokens)
         print("Loading trees...")
         for tree in mayanParser.parse(tokens):
             print("Parse tree:")
