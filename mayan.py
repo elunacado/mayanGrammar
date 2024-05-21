@@ -4,8 +4,8 @@ from nltk import CFG
 mayanGrammar = CFG.fromstring("""
     S -> PP DET
     
-    DET -> AV MPV V N
-    DET -> P MPV V N
+    DET -> AV MPV V N | P MPV V N
+
     
     AV -> 'táan'                                                    
     P -> 'k'
@@ -13,8 +13,7 @@ mayanGrammar = CFG.fromstring("""
     MPV -> 'in' | 'a' | 'u' | 'k'
     PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
     
-    V -> IV
-    V -> TV                                
+    V -> IV | TV                              
     IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' 
     TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
     
@@ -67,7 +66,15 @@ sentences = [
             'Tene_ kin ukic já',
             'Teche_ ka hantic janal',
             'Leti_e_ ku haylic summ',
-            'Tone_ táan u cimzik tunich',
+            'Tone_ táan k naaczik tunich',
+            'Te_exe_ táan a cimzik kay',
+            'Leti_obe_ ku canic python',
+            'Tene_ kin ukul já',
+            'Teche_ ka hanal janal',
+            'Leti_e_ ku hayal summ',
+            'Tone_ táan k naacal tunich',
+            'Te_exe_ táan a cimil kay',
+            'Leti_obe_ ku canal python',
             ]
 
 for sentence in sentences:
