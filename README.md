@@ -29,7 +29,8 @@ Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which mean
 
 And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
-And some sentences that can be formed and are included as tests in my code are:
+
+Some sentences that can be formed and are included as tests in my code are:
 * I am drinking water regularly
 * You are eating food regularly
 * He/She is stretching the rope regularly
@@ -43,9 +44,12 @@ And some sentences that can be formed and are included as tests in my code are:
 * They kill fish
 * They learn python
 
-And for this hand-in i'll deliver a RCFG (Restricted Context Free Grammar) which as explained by (author & definition) <br />
+So for this hand-in i'll deliver a CFG (Context Free Grammar) which as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S).<br />
 I've prevented any ambiguity** in RCFG by ....  <br />
 And any left side recursion*** by  .... <br />
+
+##Tests
+To run this code 
 
 *Leti'obe' is the plural for he and she or as we would say in spanish 'ellos o ellas'
 **Ambiguity: <br />
