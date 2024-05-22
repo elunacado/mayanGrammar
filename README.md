@@ -45,6 +45,8 @@ Some sentences that can be formed and are included as tests in my code are:
 * They learn python
 
 So for this hand-in i'll deliver a CFG (Context Free Grammar) which as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S).<br />
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
+
 I've prevented any ambiguity** in RCFG by ....  <br />
 And any left side recursion*** by  .... <br />
 
