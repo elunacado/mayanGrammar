@@ -63,17 +63,29 @@ def mayanTokenizer(sentence):
     return sentence.split()
 
 sentences = [
+            #I am drinking water regularly
             'Tene_ kin ukic já',
+            #You are eating food regularly
             'Teche_ ka hantic janal',
+            #He/She is stretching the rope regularly
             'Leti_e_ ku haylic summ',
+            #We are lifting the stone
             'Tone_ táan k naaczik tunich',
+            #They are killing fish
             'Te_exe_ táan a cimzik kay',
+            #They are learning python
             'Leti_obe_ ku canic python',
+            #I drink water regularly
             'Tene_ kin ukul já',
+            #you eat food regularly
             'Teche_ ka hanal janal',
+            #He/She stretch the rope regularly
             'Leti_e_ ku hayal summ',
+            #We lift the stone
             'Tone_ táan k naacal tunich',
+            #They kill fish
             'Te_exe_ táan a cimil kay',
+            #They learn python
             'Leti_obe_ ku canal python',
             ]
 
