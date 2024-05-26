@@ -4,8 +4,9 @@ from nltk import CFG
 mayanGrammar = CFG.fromstring("""
     S -> PP DET
     
-    DET -> AV MPV V N | P MPV V N
+    DET ->  PMPV MPV V N
 
+    PMPV -> AV|P
     
     AV -> 'táan'                                                    
     P -> 'k'
