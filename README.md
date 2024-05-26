@@ -1,5 +1,8 @@
 # mayanGrammar
 This is my hand in for:  Evidence 2 Generating and Cleaning a Restricted Context Free Grammar 
+Were I'll deliver a RCFG (Restricted Context Free Grammar) which is a variation of a CFG and as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). <br />
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
+so a RCFG follows the same rules as a CFG but witha added restrictions that simplify the parsing and reduce the ambiguity**
 
 ## Language Structure 
 The language I chose for this hand-in was Mayan, but because of the complexity of this language, I'll be limiting it to the two types of present Mayas have which are Actual Present which describes an action that is taking place at the current moment the rules for this tense are as follows:
@@ -29,10 +32,6 @@ For this hand-in i choosed the following verbs: <br />
 Transitive Verbs -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' which means 'to drink'|'to eat'|'to stretch'|'to lift'|'to kill'|'to learn' <br />
 Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which means 'drink'|'eat'|'stretch'|'lift'|'kill'|'learn' <br />
 
-
-So for this hand-in i'll deliver a CFG (Restricted Context Free Grammar) which as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). bu<br />
-![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
-
 ## Nouns
 And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
@@ -41,6 +40,7 @@ Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(t
 
 ## Implementation
 
+## Checking for ambiguity and Left Side Recursion
 
 ## Tests
 Some sentences that can be formed and are included as tests in my code are:
