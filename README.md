@@ -53,7 +53,18 @@ In this tree we describe the language as follows
     N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 ```
 So let's explain it section by section
-* S: A sentence is formed by a Personal Pronoun and a Determinant
+* S -> PP DET: A sentence is formed by a Personal Pronoun and a Determinant
+* DET -> PMPV MPV V N: And the determinant is formed by a PMPV(previous mixed pronoun verbs) a MPV (mixed pronoun verb) a Verb and a Noun
+* PMPV -> AV|P: This is a placeholder for the parts of the sentence that define the tense of the sentence and can be an AV(auxiliary verb) or a P(particle)
+* AV -> 'táan'
+* P  -> 'k'
+* MPV -> 'in' | 'a' | 'u' | 'k'
+* PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+* V -> IV | TV: The verb can be either transitive or intransitive (is it happening right now or not)
+* IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic'
+* TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+* N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
+  
 ## Complexity
 
 ## Implementation
