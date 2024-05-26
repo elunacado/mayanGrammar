@@ -37,7 +37,7 @@ And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
 
 ## Model
-![alt text](https://github.com/elunacado/mayanGrammar/blob/main/árbol.jpg)
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/officialTree.jpg)
 In this tree we describe the language as follows 
 ```python
     S -> PP DET
@@ -52,7 +52,8 @@ In this tree we describe the language as follows
     TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
     N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 ```
-
+So let's explain it section by section
+* S: A sentence is formed by a Personal Pronoun and a Determinant
 ## Complexity
 
 ## Implementation
