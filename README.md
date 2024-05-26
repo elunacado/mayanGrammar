@@ -37,6 +37,7 @@ And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
 
 ## Model
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/árbol.jpg)
 
 ## Implementation
 
