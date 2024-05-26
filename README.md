@@ -38,6 +38,22 @@ Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(t
 
 ## Model
 ![alt text](https://github.com/elunacado/mayanGrammar/blob/main/árbol.jpg)
+In this tree we describe the language as follows 
+```python
+    S -> PP DET
+    DET ->  PMPV MPV V N
+    PMPV -> AV|P
+    AV -> 'táan'                                                    
+    P -> 'k'
+    MPV -> 'in' | 'a' | 'u' | 'k'
+    PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+    V -> IV | TV                              
+    IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' 
+    TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+    N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
+```
+
+## Complexity
 
 ## Implementation
 
