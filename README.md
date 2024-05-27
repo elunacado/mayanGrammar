@@ -1,5 +1,8 @@
 # mayanGrammar
 This is my hand in for:  Evidence 2 Generating and Cleaning a Restricted Context Free Grammar 
+Were I'll deliver a RCFG (Restricted Context Free Grammar) which is a variation of a CFG and as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). <br />
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
+so a RCFG follows the same rules as a CFG but witha added restrictions that simplify the parsing and reduce the ambiguity**
 
 ## Language Structure 
 The language I chose for this hand-in was Mayan, but because of the complexity of this language, I'll be limiting it to the two types of present Mayas have which are Actual Present which describes an action that is taking place at the current moment the rules for this tense are as follows:
@@ -29,18 +32,159 @@ For this hand-in i choosed the following verbs: <br />
 Transitive Verbs -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' which means 'to drink'|'to eat'|'to stretch'|'to lift'|'to kill'|'to learn' <br />
 Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which means 'drink'|'eat'|'stretch'|'lift'|'kill'|'learn' <br />
 
-
-So for this hand-in i'll deliver a CFG (Restricted Context Free Grammar) which as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). bu<br />
-![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
-
 ## Nouns
 And my nouns for this hand-in are going to be: <br />
 Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
 
 ## Model
+![alt text](https://github.com/elunacado/mayanGrammar/blob/main/officialTree.jpg)
+In this tree we describe the language as follows 
+```python
+    S -> PP DET
+    DET ->  PMPV MPV V N
+    PMPV -> AV|P
+    AV -> 'táan'                                                    
+    P -> 'k'
+    MPV -> 'in' | 'a' | 'u' | 'k'
+    PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+    V -> IV | TV                              
+    IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' 
+    TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+    N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
+```
+So let's explain it section by section
+* S -> PP DET: A sentence is formed by a Personal Pronoun and a Determinant
+* DET -> PMPV MPV V N: And the determinant is formed by a PMPV(previous mixed pronoun verbs) a MPV (mixed pronoun verb) a Verb and a Noun
+* PMPV -> AV|P: This is a placeholder for the parts of the sentence that define the tense of the sentence and can be an AV(auxiliary verb) or a P(particle)
+* AV -> 'táan'
+* P  -> 'k'
+* MPV -> 'in' | 'a' | 'u' | 'k'
+* PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+* V -> IV | TV: The verb can be either transitive or intransitive (is it happening right now or not)
+* IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic'
+* TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+* N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 
 ## Implementation
+I start the program by importing the natural-language-toolkit and the Context-Free-Grammar section
+  ```python
+import nltk
+from nltk import CFG
+```
+I setup the sections of the rules of the language
+```python
+mayanGrammar = CFG.fromstring("""
+    S -> PP DET
+    
+    DET ->  PMPV MPV V N
 
+    PMPV -> AV|P
+    
+    AV -> 'táan'                                                    
+    P -> 'k'
+                            
+    MPV -> 'in' | 'a' | 'u' | 'k'
+    PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+    
+    V -> IV | TV                              
+    IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' 
+    TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+    
+    N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
+    """)
+```
+I parse the chart
+```python
+mayanParser = nltk.ChartParser(mayanGrammar)
+```
+I tokenize the sentences separating the particle from the mixed pronoun verb and return the sentence divided word by word
+```python
+
+def mayanTokenizer(sentence):
+    sentence = sentence.lower()
+    replacements = {
+        #kin case
+        'tene_ kin': 'tene_ k in',
+        'teche_ kin': 'teche_ k in',
+        'leti_e_ kin': 'leti_e_ k in',
+        'tone_ kin': 'tone_ k in',
+        'te_exe_ kin': 'te_exe_ k in',
+        'leti_obe_ kin': 'leti_obe_ k in',
+
+        #ka case
+        'tene_ ka': 'tene_ k a',
+        'teche_ ka': 'teche_ k a',
+        'leti_e_ ka': 'leti_e_ k a',
+        'tone_ ka': 'tone_ k a',
+        'te_exe_ ka': 'te_exe_ k a',
+        'leti_obe_ ka': 'leti_obe_ k a',
+
+        #ku case
+        'tene_ ku': 'tene_ k u',
+        'teche_ ku': 'teche_ k u',
+        'leti_e_ ku': 'leti_e_ k u',
+        'tone_ ku': 'tone_ k u',
+        'te_exe_ ku': 'te_exe_ k u',
+        'leti_obe_ ku': 'leti_obe_ k u',
+
+        #k case
+        'tene_ kk': 'tene_ k k',
+        'teche_ kk': 'teche_ k k',
+        'leti_e_ kk': 'leti_e_ k k',
+        'tone_ kk': 'tone_ k k',
+        'te_exe_ kk': 'te_exe_ k k',
+        'leti_obe_ kk': 'leti_obe_ k k',
+        
+    }
+    for word, replacement in replacements.items():
+            sentence = sentence.replace(word, replacement)
+        return sentence.split()
+```
+I setup the test sentences
+```python
+sentences = [
+            #I am drinking water regularly
+            'Tene_ kin ukic já',
+            #You are eating food regularly
+            'Teche_ ka hantic janal',
+            #He/She is stretching the rope regularly
+            'Leti_e_ ku haylic summ',
+            #We are lifting the stone
+            'Tone_ táan k naaczik tunich',
+            #They are killing fish
+            'Te_exe_ táan a cimzik kay',
+            #They are learning python
+            'Leti_obe_ ku canic python',
+            #I drink water regularly
+            'Tene_ kin ukul já',
+            #you eat food regularly
+            'Teche_ ka hanal janal',
+            #He/She stretch the rope regularly
+            'Leti_e_ ku hayal summ',
+            #We lift the stone
+            'Tone_ táan k naacal tunich',
+            #They kill fish
+            'Te_exe_ táan a cimil kay',
+            #They learn python
+            'Leti_obe_ ku canal python',
+            ]
+```
+For each sentence in sentences we'll tokenize it, check if any tokens have been generated, generate a tree with said tokens and print it.
+```python
+for sentence in sentences:
+    tokens = mayanTokenizer(sentence)
+    if not tokens:
+        print("Failed to tokenize sentence:", sentence)
+    else:
+        print("Tokens:", tokens)
+        print("Loading trees...")
+        for tree in mayanParser.parse(tokens):
+            print("Parse tree:")
+            tree.pretty_print()
+```
+## Complexity
+
+## Checking for ambiguity and Left Side Recursion
 
 ## Tests
 Some sentences that can be formed and are included as tests in my code are:
