@@ -95,7 +95,7 @@ for sentence in sentences:
     if not tokens:
         print("Failed to tokenize sentence:", sentence)
     else:
-        print("Tokens:", tokens)
+        #print("Tokens:", tokens)
         print("Loading trees...")
         for tree in mayanParser.parse(tokens):
             print("Parse tree:")
