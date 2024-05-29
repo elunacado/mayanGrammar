@@ -209,6 +209,8 @@ Some sentences that can be formed and are included as tests in my code are:
 
 To run the code you just need to write in your terminal python name_of_the_file
 
+## Other ways to solve this
+
 ### Appendix
 *Leti'obe' is the plural for he and she or as we would say in spanish 'ellos o ellas' <br />
 
