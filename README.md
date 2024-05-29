@@ -65,7 +65,7 @@ So let's explain it section by section
 * TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
 * N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 
-## Implementation
+## Implementation and Complexity
 I start the program by importing the natural-language-toolkit and the Context-Free-Grammar section
   ```python
 import nltk
@@ -93,11 +93,13 @@ mayanGrammar = CFG.fromstring("""
     N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
     """)
 ```
-I parse the chart
+I parse the chart with the NLTK which has a O(n^3 * g) complexity n being the length of the sentence and the g being the complexity of the grammar </br>
+
 ```python
 mayanParser = nltk.ChartParser(mayanGrammar)
 ```
 I tokenize the sentences separating the particle from the mixed pronoun verb and return the sentence divided word by word
+this process has a complexity of O(n * m) since the main variables are the length of the string and the amount of replacements that would take place
 ```python
 
 def mayanTokenizer(sentence):
@@ -182,9 +184,13 @@ for sentence in sentences:
             print("Parse tree:")
             tree.pretty_print()
 ```
-## Complexity
+So the overall complexityh of the grammar would be: </br>
+O(n^3 * g) + O(n * m)
 
-## Checking for ambiguity and Left Side Recursion
+## Checking for Ambiguity and Left Side Recursion
+Ambiguity: The ambiguity it's defined by a string that can be defined by 2 or more rules of the grammar, so this RCFG is clear of ambiguity
+
+Left Side Recursion: The Left side recursion occurs when a Symbol by example 'S' gives the option to reference itself which creating an infinite recursive loop of calling itself over and over and over. Luckily there isn't any LSR in this code since each symbol is only used once and never referenciates itself
 
 ## Tests
 Some sentences that can be formed and are included as tests in my code are:
@@ -205,8 +211,6 @@ To run the code you just need to write in your terminal python name_of_the_file
 
 ### Appendix
 *Leti'obe' is the plural for he and she or as we would say in spanish 'ellos o ellas' <br />
-**Ambiguity: <br />
-***Left Side Recursion: <br />
 
 [1] https://www.geeksforgeeks.org/what-is-context-free-grammar/ <br />
 [2] https://www.researchgate.net/publication/221212174_On_Restricted_Context-Free_Grammars
