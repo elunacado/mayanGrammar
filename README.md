@@ -1,8 +1,8 @@
 # mayanGrammar
 This is my hand in for:  Evidence 2 Generating and Cleaning a Restricted Context Free Grammar 
-Were I'll deliver a RCFG (Restricted Context Free Grammar) which is a variation of a CFG and as explained in the webpage for Geeks for Geeks a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). <br />
+Were I'll deliver a RCFG (Restricted Context Free Grammar), which is a variation of a CFG and as explained in the webpage for Geeks for Geeks, a CFG is a a type of formal grammar that has four tuples: (V,T,P,S). <br />
 ![alt text](https://github.com/elunacado/mayanGrammar/blob/main/rcfg.png)
-so a RCFG follows the same rules as a CFG but witha added restrictions that simplify the parsing and reduce the ambiguity**
+So a RCFG follows the same rules as a CFG but with added restrictions that simplify the parsing and reduce the ambiguity.
 
 ## Language Structure 
 The language I chose for this hand-in was Mayan, but because of the complexity of this language, I'll be limiting it to the two types of present Mayas have which are Actual Present which describes an action that is taking place at the current moment the rules for this tense are as follows:
@@ -15,7 +15,7 @@ The language I chose for this hand-in was Mayan, but because of the complexity o
 | Te'exe'               | táan             | a                   |                            |     |
 | Leti'obe'             | táan             | u                   |                            |     |
 
-and  Regular present which describe actions that occur regularly, such as eating or sleeping, and for this tense, the rules are the next ones:
+and  Regular present, which describe actions that occur regularly, such as eating or sleeping, and for this tense, the rules are the next ones:
 
 | Personal Pronoun      | Particle        | Mixed pronoun verbs | Verb                       | Noun |
 |-----------------------|-----------------|---------------------|----------------------------|------|
@@ -28,17 +28,17 @@ and  Regular present which describe actions that occur regularly, such as eating
 
 
 ## Verbs
-For this hand-in i choosed the following verbs: <br />
-Transitive Verbs -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' which means 'to drink'|'to eat'|'to stretch'|'to lift'|'to kill'|'to learn' <br />
-Intransitive Verbs -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which means 'drink'|'eat'|'stretch'|'lift'|'kill'|'learn' <br />
+For this hand-in, I chose the following verbs: <br />
+Transitive Verbs: → 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic' which means 'to drink'|'to eat'|'to stretch'|'to lift'|'to kill'|'to learn' <br />
+Intransitive Verbs: → 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal' which means 'drink'|'eat'|'stretch'|'lift'|'kill'|'learn' <br />
 
 ## Nouns
 And my nouns for this hand-in are going to be: <br />
-Já|janal|sumn|tunich|kay|python which means water|food|rope|stone|fish|python(the programming language) <br />
+Já|janal|sumn|tunich|kay|python, which means water|food|rope|stone|fish|python (the programming language) <br />
 
 ## Model
 ![alt text](https://github.com/elunacado/mayanGrammar/blob/main/officialTree.jpg)
-In this tree we describe the language as follows 
+In this tree, we describe the language as follows:
 ```python
     S -> PP DET
     DET ->  PMPV MPV V N
@@ -53,17 +53,17 @@ In this tree we describe the language as follows
     N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 ```
 So let's explain it section by section
-* S -> PP DET: A sentence is formed by a Personal Pronoun and a Determinant
-* DET -> PMPV MPV V N: And the determinant is formed by a PMPV(previous mixed pronoun verbs) a MPV (mixed pronoun verb) a Verb and a Noun
-* PMPV -> AV|P: This is a placeholder for the parts of the sentence that define the tense of the sentence and can be an AV(auxiliary verb) or a P(particle)
-* AV -> 'táan'
-* P  -> 'k'
-* MPV -> 'in' | 'a' | 'u' | 'k'
-* PP -> 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
-* V -> IV | TV: The verb can be either transitive or intransitive (is it happening right now or not)
-* IV -> 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic'
-* TV -> 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
-* N -> 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
+* S → PP DET: A sentence is formed by a Personal Pronoun and a Determinant
+* DET → PMPV MPV V N: And the determinant is formed by a PMPV (previous mixed pronoun verbs), an MPV (mixed pronoun verb), a Verb and a Noun
+* PMPV → AV|P: This is a placeholder for the parts of the sentence that define the tense of the sentence and can be an AV (auxiliary verb) or a P (particle)
+* AV → 'táan'
+* P  → 'k'
+* MPV: → 'in' | 'a' | 'u' | 'k'
+* PP → 'tene_' | 'teche_' | 'leti_e_' | 'tone_' | 'te_exe_' | 'leti_obe_'
+* V → IV | TV: The verb can be either transitive or intransitive (is it happening right now or not)
+* IV → 'ukic'|'hantic'|'haylic'|'naaczik'|'cimzik'|'canic'
+* TV → 'ukul'|'hanal'|'hayal'|'naacal'|'cimil'|'canal'
+* N → 'já'|'janal'|'summ'|'tunich'|'kay'|'python'
 
 ## Implementation and Complexity
 I start the program by importing the natural-language-toolkit and the Context-Free-Grammar section
@@ -71,7 +71,7 @@ I start the program by importing the natural-language-toolkit and the Context-Fr
 import nltk
 from nltk import CFG
 ```
-I setup the sections of the rules of the language
+I set up the sections of the rules of the language
 ```python
 mayanGrammar = CFG.fromstring("""
     S -> PP DET
@@ -142,7 +142,7 @@ def mayanTokenizer(sentence):
             sentence = sentence.replace(word, replacement)
         return sentence.split()
 ```
-I setup the test sentences
+I set up the test sentences
 ```python
 sentences = [
             #I am drinking water regularly
@@ -184,13 +184,13 @@ for sentence in sentences:
             print("Parse tree:")
             tree.pretty_print()
 ```
-So the overall complexityh of the grammar would be: </br>
+So the overall complexity of the grammar would be: </br>
 O(n^3 * g) + O(n * m)
 
 ## Checking for Ambiguity and Left Side Recursion
 Ambiguity: The ambiguity it's defined by a string that can be defined by 2 or more rules of the grammar, so this RCFG is clear of ambiguity
 
-Left Side Recursion: The Left side recursion occurs when a Symbol by example 'S' gives the option to reference itself which creating an infinite recursive loop of calling itself over and over and over. Luckily there isn't any LSR in this code since each symbol is only used once and never referenciates itself
+Left Side Recursion: The Left side recursion occurs when a symbol by example 'S' gives the option to reference itself, creating an infinite recursive loop of calling itself over and over and over. Luckily, there isn't any LSR in this code since each symbol is only used once and never references itself
 
 ## Tests
 Some sentences that can be formed and are included as tests in my code are:
@@ -207,12 +207,81 @@ Some sentences that can be formed and are included as tests in my code are:
 * They kill fish
 * They learn python
 
-To run the code you just need to write in your terminal python name_of_the_file
+To run the code, you just need to write in your terminal python name_of_the_file
 
 ## Other ways to solve this
+According to the AI ChatGPT from Open AI, another way of making this tree would be by using the following JS code:
+```js
+const grammar = {
+    S: [['PP', 'DET']],
+    DET: [['PMPV', 'MPV', 'V', 'N']],
+    PMPV: [['AV'], ['P']],
+    AV: ['táan'],
+    P: ['k'],
+    MPV: ['in', 'a', 'u', 'k'],
+    PP: ['tene_', 'teche_', 'leti_e_', 'tone_', 'te_exe_', 'leti_obe_'],
+    V: [['IV'], ['TV']],
+    IV: ['ukic', 'hantic', 'haylic', 'naaczik', 'cimzik', 'canic'],
+    TV: ['ukul', 'hanal', 'hayal', 'naacal', 'cimil', 'canal'],
+    N: ['já', 'janal', 'summ', 'tunich', 'kay', 'python']
+};
+
+function tokenize(sentence) {
+    return sentence.toLowerCase().split(' ');
+}
+
+function parse(tokens, grammar, startSymbol) {
+    function helper(tokens, rule) {
+        if (tokens.length === 0) return tokens.length === 0;
+        if (grammar[rule]) {
+            for (const production of grammar[rule]) {
+                const remainingTokens = parseSequence(tokens, production);
+                if (remainingTokens !== null) return remainingTokens;
+            }
+        } else if (tokens[0] === rule) {
+            return tokens.slice(1);
+        }
+        return null;
+    }
+
+    function parseSequence(tokens, sequence) {
+        let remainingTokens = tokens;
+        for (const symbol of sequence) {
+            remainingTokens = helper(remainingTokens, symbol);
+            if (remainingTokens === null) return null;
+        }
+        return remainingTokens;
+    }
+
+    return helper(tokens, startSymbol) === [] ? 'Successfully parsed!' : 'Parsing failed.';
+}
+
+const sentences = [
+    'Tene_ kin ukic já',
+    'Teche_ ka hantic janal',
+    'Leti_e_ ku haylic summ',
+    'Tone_ táan k naaczik tunich',
+    'Te_exe_ táan a cimzik kay',
+    'Leti_obe_ ku canic python',
+    'Tene_ kin ukul já',
+    'Teche_ ka hanal janal',
+    'Leti_e_ ku hayal summ',
+    'Tone_ táan k naacal tunich',
+    'Te_exe_ táan a cimil kay',
+    'Leti_obe_ ku canal python',
+];
+
+for (const sentence of sentences) {
+    const tokens = tokenize(sentence);
+    console.log(`Parsing sentence: "${sentence}"`);
+    console.log(parse(tokens, grammar, 'S'));
+}
+
+```
+Where we tokenize and parse the sentences and has a complexity of O(n^2), however in this code we aren't printing any trees like on our original code, and JS is harder to understand than python
 
 ### Appendix
-*Leti'obe' is the plural for he and she or as we would say in spanish 'ellos o ellas' <br />
+*Leti'obe' is the plural for he and she, or, as we would say in Spanish, 'ellos o ellas' <br />
 
 [1] https://www.geeksforgeeks.org/what-is-context-free-grammar/ <br />
 [2] https://www.researchgate.net/publication/221212174_On_Restricted_Context-Free_Grammars
