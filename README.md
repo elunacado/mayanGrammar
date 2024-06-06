@@ -188,7 +188,7 @@ So the overall complexity of the grammar would be: </br>
 O(n^3 * g) + O(n * m)
 
 ## Checking for Ambiguity and Left Side Recursion
-Ambiguity: The ambiguity it's defined by a string that can be defined by 2 or more rules of the grammar, so this RCFG is clear of ambiguity
+Ambiguity: The ambiguity it's defined by a string that can be go different ways on a tree, so this RCFG isn't clear of ambiguity because of the verbs and auxiliary verbs and particles
 
 Left Side Recursion: The Left side recursion occurs when a symbol by example 'S' gives the option to reference itself, creating an infinite recursive loop of calling itself over and over and over. Luckily, there isn't any LSR in this code since each symbol is only used once and never references itself
 
